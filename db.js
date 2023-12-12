@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-process.env.NODE_ENV === "production" ? db.host = 'base' : db.host = 'localhost'
+process.env.NODE_ENV === "production" ? db.host = process.env.HOSTNAME : db.host = 'localhost'
 
 db.connect();
 
