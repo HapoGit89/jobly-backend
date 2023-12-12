@@ -17,7 +17,8 @@ if (process.env.NODE_ENV === "production") {
     connectionString: getDatabaseUri()
   });
 }
-db.host = 'localhost'
+
+process.env.NODE_ENV === "production" ? db.host = 'base' : db.host = 'localhost'
 
 db.connect();
 
